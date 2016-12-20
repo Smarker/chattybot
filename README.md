@@ -1,8 +1,6 @@
 #Make a Slack Chatbot on Cloud9 using Hubot
-![](http://i.markdownnotes.com/blob_DrFpIes)
-
 Hubot is an open-source chatbot written by GitHub in CoffeeScript and is ran on Node.js. You can download scripts to customize your robot to your liking. You can learn more about Hubot here: https://hubot.github.com/
-
+![](http://cdn0.icicletech.com/media/hubot.png)
 
 ##What You Need
 To avoid downloading Node.js and npm, we will be using the Cloud9 IDE.
@@ -14,8 +12,6 @@ To avoid downloading Node.js and npm, we will be using the Cloud9 IDE.
 
 ###Login to Cloud9 and create a new workspace
 Add a workspace name and choose node.js as a template
-
-![](http://i.markdownnotes.com/blob_nJXalgp)
 
 ###We will be following the steps in Hubot's Getting Started Section 
 Many of the steps taken below are from https://hubot.github.com/docs/ with a few added commands to make sure everything is up to date.
@@ -32,8 +28,7 @@ Make a bot called chattybot (or whatever name you'd like)
 ```% cd chattybot```
 ```% yo hubot```
 
-When you run the **yo** command you wil be asked a series of questions from this friendly bot:
-![](http://i.markdownnotes.com/blob_myQqyl0)
+When you run the **yo** command you wil be asked a series of questions from a friendly bot.
 
 The bot's name will be the same name as the one you made when you created a new directory.
 
@@ -46,9 +41,7 @@ When prompted, specify the adapter as **slack**. Here is an example below:
 
 ###Let's add this to git and save our work
 
-First, create a new repository:
-
-![](http://i.markdownnotes.com/blob_ibvNspv)
+First, create a new repository. 
 
 From the cloud9 terminal, let's push our work to our remote git repository.
 ``` % git init```
@@ -62,14 +55,11 @@ When you refresh your github page, you should see your code pushed to your repo.
 Navigate to https://slack.com/signin
 Click on **create a new team** on the top nav bar.
 
-![](http://i.markdownnotes.com/blob_3Chk9GD)
 Answer all the questions, and then launch slack!
 
-Click on **Team Settings**:
-![](http://i.markdownnotes.com/blob_67NX5EM)
+Click on **Team Settings**.
 
-Click on **Configure Apps**:
-![](http://i.markdownnotes.com/blob_roWsiFV)
+Click on **Configure Apps**.
 
 Search **App Directory** for **Hubot**
 ![](http://i.markdownnotes.com/blob_NS2vKVF.jpg)
@@ -85,8 +75,7 @@ In cloud9 export the slack token:
 Run hubot:
 ```% ./bin/hubot --adapter slack``` 
 
-When you return to slack you should see that your bot is online:
-![](http://i.markdownnotes.com/blob_lvOX9oB)
+When you return to slack you should see that your bot is online.
 
 Click on **chattybot** and click on the little gear icon. You should be able to click on **Invite to a channel..** I picked the channel called **#random**. Now try typing in **chattybot time** into the #random channel. Chattybot should respond by giving you the server time!
 
