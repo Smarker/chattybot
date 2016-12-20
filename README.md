@@ -61,11 +61,9 @@ Click on **Team Settings**.
 
 Click on **Configure Apps**.
 
-Search **App Directory** for **Hubot**
-![](http://i.markdownnotes.com/blob_NS2vKVF.jpg)
+Search **App Directory** for **Hubot**.
 
-Click **Install**:
-![](http://i.markdownnotes.com/blob_JiHBeVK.jpg)
+Click **Install**.
 Name your bot chattybot and add the Hubot integration
 
 You will get a hubot slack token to use for a hubot slack adapter.
