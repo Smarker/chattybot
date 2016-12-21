@@ -107,7 +107,7 @@
 
 
 // Description:
-//   holiday detector script
+//   Spotify Play Script
 //
 // Dependencies:
 //   None
@@ -119,7 +119,7 @@
 //   hubot is it weekend ?  - returns whether is it weekend or not
 //   hubot is it holiday ?  - returns whether is it holiday or not
 module.exports = function(robot) {
-    var playRegex = /play ([A-Za-z0-9]+)/i;
+    var playRegex = /play ([A-Za-z0-9\s]+)/i;
     
     robot.hear(playRegex, function(msg) {
         console.log(msg.message.text);
@@ -129,12 +129,30 @@ module.exports = function(robot) {
         
         console.log(match[1]);
         
-        msg.send("Dinner will be served in an hour.");
-    });
-  
-    robot.respond(/is it (weekend|holiday)\s?\?/i, function(msg){
-        var today = new Date();
-
-        msg.reply(today.getDay() === 0 || today.getDay() === 6 ? "YES" : "NO");
+        var SpotifyWebApi = require('spotify-web-api-node');
+ 
+        var spotifyApi = new SpotifyWebApi({ //credentials from my spotify app
+          clientId : '504e550b118e44189695ba2cabb9ba88',
+          clientSecret : '529502e322a946d2a0dfb35ab7f61f0a',
+          redirectUri : 'http://localhost:8888/callback'
+        });
+        
+        spotifyApi.searchTracks('track:' + songName)
+          .then(function(data) {
+            var res = data.body;
+            //console.log("res: ", res);
+            
+            /*
+            for(var i = 0; i < res.tracks.items.length; i++) { //items = songs
+              console.log("res urls: ", res.tracks.items[i].external_urls.spotify);
+            }
+            */
+            
+            msg.send("I found your song! " + res.tracks.items[0].external_urls.spotify);
+            
+          }, function(err) {
+            console.log('Error in searchTracks!', err);
+          });
+        
     });
 }
