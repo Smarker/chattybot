@@ -122,12 +122,10 @@ module.exports = function(robot) {
     var playRegex = /play ([A-Za-z0-9\s]+)/i;
     
     robot.hear(playRegex, function(msg) {
-        console.log(msg.message.text);
-        
-        var match = playRegex.exec(msg.message.text); //I looked at the structure of msg to find what I wrote to chattybot
+        var msgText = msg.message.text;
+
+        var match = playRegex.exec(msgText); //I looked at the structure of msg to find what I wrote to chattybot
         var songName = match[1];
-        
-        console.log(match[1]);
         
         var SpotifyWebApi = require('spotify-web-api-node');
  
@@ -140,16 +138,10 @@ module.exports = function(robot) {
         spotifyApi.searchTracks('track:' + songName)
           .then(function(data) {
             var res = data.body;
-            //console.log("res: ", res);
-            
-            /*
-            for(var i = 0; i < res.tracks.items.length; i++) { //items = songs
-              console.log("res urls: ", res.tracks.items[i].external_urls.spotify);
+
+            if(res.tracks.items.length > 0) {
+              msg.send("I found your song! " + res.tracks.items[0].external_urls.spotify);
             }
-            */
-            
-            msg.send("I found your song! " + res.tracks.items[0].external_urls.spotify);
-            
           }, function(err) {
             console.log('Error in searchTracks!', err);
           });

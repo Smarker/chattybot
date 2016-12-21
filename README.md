@@ -111,6 +111,9 @@ Now you can write **chattybot youtube rick rolled** and get a link to a youtube 
 
 ###Create your own chattybot scripts
 See hubot-playspotify.js for an example with spotify
+TODO: explain futher
+
+###TODO: store env var for chattybot in redis
 
 
 
