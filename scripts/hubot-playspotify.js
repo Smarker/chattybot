@@ -1,4 +1,4 @@
-# Description:
+/*# Description:
 #   Example scripts for you to examine and try out.
 #
 # Notes:
@@ -8,7 +8,7 @@
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 
-module.exports = (robot) ->
+#module.exports = (robot) ->
 
   # robot.hear /badger/i, (res) ->
   #   res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
@@ -103,4 +103,38 @@ module.exports = (robot) ->
   #
   # robot.respond /sleep it off/i, (res) ->
   #   robot.brain.set 'totalSodas', 0
-  #   res.reply 'zzzzz'
+  #   res.reply 'zzzzz'*/
+
+
+// Description:
+//   holiday detector script
+//
+// Dependencies:
+//   None
+//
+// Configuration:
+//   None
+//
+// Commands:
+//   hubot is it weekend ?  - returns whether is it weekend or not
+//   hubot is it holiday ?  - returns whether is it holiday or not
+module.exports = function(robot) {
+    var playRegex = /play ([A-Za-z0-9]+)/i;
+    
+    robot.hear(playRegex, function(msg) {
+        console.log(msg.message.text);
+        
+        var match = playRegex.exec(msg.message.text); //I looked at the structure of msg to find what I wrote to chattybot
+        var songName = match[1];
+        
+        console.log(match[1]);
+        
+        msg.send("Dinner will be served in an hour.");
+    });
+  
+    robot.respond(/is it (weekend|holiday)\s?\?/i, function(msg){
+        var today = new Date();
+
+        msg.reply(today.getDay() === 0 || today.getDay() === 6 ? "YES" : "NO");
+    });
+}
