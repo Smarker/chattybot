@@ -104,13 +104,13 @@ Now try typing in **chattybot time** into the #random channel.
 
 Chattybot should respond by giving you the server time!
 
-###Add more functionality to chattybot
+###Add more functionality to chattybot through other npm packages
 I installed a hubot-youtube package here https://github.com/hubot-scripts/hubot-youtube and followed its instructions.
 
 Now you can write **chattybot youtube rick rolled** and get a link to a youtube url related to your search.
 
-
-
+###Create your own chattybot scripts
+See hubot-playspotify.js for an example with spotify
 
 
 
