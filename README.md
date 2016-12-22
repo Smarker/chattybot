@@ -1,12 +1,16 @@
-#Make a Slack Chatbot on Cloud9 using Hubot
-Hubot is an open-source chatbot written by GitHub in CoffeeScript and is ran on Node.js. You can download scripts to customize your robot to your liking. You can learn more about Hubot here: https://hubot.github.com/
+#Make a Bot on Cloud9 using Hubot and Slack as an adapter
+Hubot is an open-source bot written by GitHub in CoffeeScript and ran on Node.js. You can download scripts to customize your robot to your liking. Hubot can act as a help with translating languages, posting youtube videos, automating tasks, and much more.  You can learn more about Hubot here: https://hubot.github.com/
 ![](http://cdn0.icicletech.com/media/hubot.png)
 
-##What You Need
+##What You Will Need
 To avoid downloading Node.js and npm, we will be using the Cloud9 IDE.
 * cloud 9 account
 * github account
 * slack account
+
+##What You Could Need
+* spotify account (when creating your own custom hubot script to interact with spotify)
+* youtube account
 
 ##Let's Get Started
 
@@ -25,7 +29,7 @@ Install a hubot generator
 ```% npm install -g yo generator-hubot```
 
 
-Make a bot called chattybot (or whatever name you'd like)
+Create a directory for your bot to reside in. The directory name should match your bot's name. I called my bot chattybot (but you could name it whatever you'd like)
 
 ```% mkdir chattybot```
 
@@ -82,15 +86,11 @@ Click **Install**.
 
 Name your bot chattybot and add the Hubot integration
 
-You will get a hubot slack token to use for a hubot slack adapter.
-
-In cloud9 export the slack token:
-
-```export HUBOT_SLACK_TOKEN=<token>```
+You will get a hubot slack token to use for a hubot slack adapter. Use this token when you run your bot:
 
 Run hubot:
 
-```% ./bin/hubot --adapter slack``` 
+```% HUBOT_SLACK_TOKEN=<token> ./bin/hubot --adapter slack``` 
 
 When you return to slack you should see that your bot is online.
 
