@@ -12,13 +12,14 @@ To avoid downloading Node.js and npm, we will be using the Cloud9 IDE.
 * spotify account (when creating your own custom hubot script to interact with spotify)
 * youtube account
 
-##Let's Get Started
+#Let's Get Started
 
 ###Login to Cloud9 and create a new workspace
 Add a workspace name and choose node.js as a template
 
-###We will be following the steps in Hubot's Getting Started Section 
-Many of the steps taken below are from https://hubot.github.com/docs/ with a few added commands to make sure everything is up to date.
+##Create an instance of Hubot
+
+We will be following the steps in Hubot's Getting Started Section. Many of the steps taken below are from https://hubot.github.com/docs/ with a few added commands to make sure everything is up to date.
 
 Make sure your npm version is up to date before generating hubot:
 
@@ -37,11 +38,7 @@ Create a directory for your bot to reside in. The directory name should match yo
 
 ```% yo hubot```
 
-When you run the **yo** command you wil be asked a series of questions from a friendly bot.
-
-The bot's name will be the same name as the one you made when you created a new directory.
-
-When prompted, specify the adapter as **slack**. Here is an example below:
+When you run the **yo** command you wil be asked a series of questions from a friendly bot. When prompted, specify the adapter as **slack**. Here is an example below:
 
 ```? Owner Stephanie Marker <stephanie.marker93@gmail.com>```
 
@@ -52,7 +49,7 @@ When prompted, specify the adapter as **slack**. Here is an example below:
 ```? Bot adapter slack```
 
 
-###Let's add this to git and save our work
+##Add Chattybot to Git
 
 First, create a new repository. 
 
@@ -69,6 +66,8 @@ From the cloud9 terminal, let's push our work to our remote git repository.
 ``` % git push -u origin master```
 
 When you refresh your github page, you should see your code pushed to your repo. Your chattybot is ready to get to work on slack, so now let's do some setup to add the bot to your slack chatroom.
+
+##Add Hubot App to Slack
 
 Navigate to https://slack.com/signin
 
@@ -104,10 +103,10 @@ Now try typing in **chattybot time** into the #random channel.
 
 Chattybot should respond by giving you the server time!
 
-###Add more functionality to chattybot through other npm packages
-I installed a hubot-youtube package here https://github.com/hubot-scripts/hubot-youtube and followed its instructions.
+##Customize Chattybot
+I looked around on npm and found a cool youtube package to add to Chattybot. I installed a hubot-youtube package here https://github.com/hubot-scripts/hubot-youtube and followed its instructions.
 
-####Restart Hubot to take your changes
+###Remember to restart Hubot to take your changes
 
 Run Hubot.
 
@@ -115,8 +114,16 @@ Run Hubot.
 
 Now you can write **chattybot youtube rick rolled** and get a link to a youtube url related to your search.
 
-###Create your own chattybot scripts
-See ```hubot-playspotify.js``` for an example of a custom script I made using the spotify api.
+##Create your own chattybot scripts
+Custom scrips may be written in either CoffeeScript or JavaScript.
+See ```hubot-playspotify.js``` for an example of a custom script I made using the spotify api. 
+
+This resource was really helpful when I was creating my script http://12devsofxmas.co.uk/2014/01/day-11-creating-your-own-franken-butler-with-hubot/ In particular, I thought it was good to know the difference between **hear** and **respond**
+
+The article states that:
+**hear** will listen to all messages sent and check whether the message matches the regular expression before executing the callback function
+
+**respond** will only analyze the message if it is addressed directly to Chattybot (i.e. it starts with your hubot’s name)
 
 TODO: make spotify credentials an env var
 
