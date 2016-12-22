@@ -115,7 +115,7 @@ Run Hubot.
 
 Now you can write **chattybot youtube rick rolled** and get a link to a youtube url related to your search.
 
-##Create your own chattybot scripts
+##Create your Own Chattybot scripts
 Custom scrips may be written in either CoffeeScript or JavaScript.
 See ```hubot-playspotify.js``` for an example of a custom script I made using the spotify api. 
 
