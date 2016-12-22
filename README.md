@@ -10,14 +10,15 @@ To avoid downloading Node.js and npm, we will be using the Cloud9 IDE.
 
 ##What You Could Need
 * spotify account (when creating your own custom hubot script to interact with spotify)
-* youtube account
+* youtube account  
+  
 
 #Let's Get Started
 
 ###Login to Cloud9 and create a new workspace
 Add a workspace name and choose node.js as a template
 
-##Create an instance of Hubot
+##Create an instance of Hubot with Slack as an adapter
 
 We will be following the steps in Hubot's Getting Started Section. Many of the steps taken below are from https://hubot.github.com/docs/ with a few added commands to make sure everything is up to date.
 
