@@ -107,11 +107,18 @@ Chattybot should respond by giving you the server time!
 ###Add more functionality to chattybot through other npm packages
 I installed a hubot-youtube package here https://github.com/hubot-scripts/hubot-youtube and followed its instructions.
 
+####Restart Hubot to take your changes
+
+Run Hubot.
+
+```HUBOT_SLACK_TOKEN=<slack token> HUBOT_YOUTUBE_API_KEY=<youtube api key> ./bin/hubot --adapter slack```
+
 Now you can write **chattybot youtube rick rolled** and get a link to a youtube url related to your search.
 
 ###Create your own chattybot scripts
-See hubot-playspotify.js for an example with spotify
-TODO: explain futher
+See ```hubot-playspotify.js``` for an example of a custom script I made using the spotify api.
+
+TODO: make spotify credentials an env var
 
 ###TODO: store env var for chattybot in redis
 
