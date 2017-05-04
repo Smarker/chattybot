@@ -2,7 +2,7 @@
 
 A custom chatbot built with github's [hubot](https://hubot.github.com/). 
 
-The bot's name is chattybot and is customized to integrate with the Spotify API. The bot will respond to the basic chatbot commands:
+The bot's name is chattybot and is customized to integrate with the Spotify API. The bot will respond to the basic chatbot commands as detailed in:
 
 ```
 chattybot help
